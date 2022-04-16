@@ -2,9 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow-x: hidden;
+  background-color: #E5E5E5;
+  height: 120vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +14,298 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-gotobattle {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #3564AE;
+  color: white;
+  padding: 15px;
+  border: 0px;
+  border-radius: 8px;
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-endgame {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  color: #3564AE;
+  padding: 15px;
+  border: 0px;
+  border-radius: 8px;
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-img-pos{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokecard-body {
+  box-shadow: inset -1px -1px 0px 1px #C4C4C4;
+  width: 312px;
+  height: 360px;
+  border-radius: 16px;
+  background-color: white;
+  text-align: center;
+  
+  font-weight: bolder;
+  color: #3564AE;
+}
+
+.pokecard-body img {
+  width: 217px;
+  height: 217px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px
+}
+
+.pokecard-text {
+    margin: auto 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #3564AE;
+}
+
+.pokecard-shadow {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(122, 142, 174, 0.24) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-startbattle {
+  margin-top: 50px
+}
+
+.speech-bubble-left{
+  height: 15%;
+  width: 25%;
+  background-color: var(--main-dark-color);
+  position: absolute;
+  border-radius: 10%;
+  left:3%;
+  top: 55%
+}
+
+.speech-bubble-right{
+  height: 15%;
+  width: 25%;
+  background-color: var(--main-light-color);
+  position: absolute;
+  border-radius: 10%;
+  right: 3%;
+  top: 10%;
+}
+
+.pointer-bubble-right{
+  width: 0;
+	height: 0;
+	border-left: 2vh solid transparent;
+	border-right: 2vh solid transparent;
+	border-top: 10vh solid var(--main-light-color);
+	position: absolute;
+	top: 65%;
+	right: -5%;
+	transform: rotate(-60deg);
+}
+
+.pointer-bubble-left{
+  width: 0;
+	height: 0;
+	border-left: 2vh solid transparent;
+	border-right: 2vh solid transparent;
+	border-top: 10vh solid var(--main-dark-color);
+	position: absolute;
+	top: -33%;
+	left: -5%;
+	transform: rotate(120deg);
+}
+
+:root {
+  --main-light-color: #f9bbb1;
+  --main-dark-color: #481b0b;
+  --main-background-color: black;
+}
+
+.pointer-text {
+  font-weight: 800;
+  font-size: 35px;
+  color: white;
+  position: absolute;
+  top: 25%;
+  left: 10%
+}
+
+.pointer-hidden {
+  opacity: 0;
+  transition: all 250ms linear 1s;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.winnerClass{
+  margin: 0 auto;
+  position: absolute;
+  visibility: visible!important;
+}
+
+.winner-text {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.hidden {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-delay: calc(var(--animate-delay) * 2);
+  animation-delay: calc(var(--animate-delay) * 2);
+}
+
+.back-button{
+  margin: 25px 40px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #3564AE;
+}
+
+.back-container{
+  width: 100VW;
+  height: 80vh;
+}
+
+
+.pokedetail-header{
+  margin-left: 56px;
+  padding-bottom: 60px;
+}
+
+.pokedetail-header .name {
+  font-size: 32px;
+  color: #3564AE;
+  font-weight: 700;
+}
+
+.pokedetail-header .sub {
+  font-size: 16px;
+  color: #3564AE;
+  font-weight: 400;
+
+}
+
+li{
+  list-style-type: none;
+}
+
+.ability-wrapper{
+  width: fit-content;
+  max-width: 535px;
+  background-color: white;
+  border-radius: 16px;
+  margin-left: 56px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 16px 36px 16px 16px;
+}
+
+.container-left{
+  display: contents;
+  max-width: 60%;
+}
+
+.container-right{
+  float: right;
+  margin-right: 56px;
+}
+
+.stats-wrapper{
+  display: inline-grid;
+  max-height: 60vh;
+  columns: 2 auto;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.stat-window{
+  min-width: 25vh;
+  min-height: 15vh;
+  background-color: white;
+  border-radius: 16px;
+  margin-left: 56px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.stat-name{
+  font-size: 16px;
+  margin-top: 24px;
+  margin-left: 24px;
+  font-weight: 700;
+  color: #3564AE;
+}
+
+.stat-value{
+  font-size: 16px;
+  margin-top: 24px;
+  margin-left: 24px;
+  color: #3564AE;
+}
+
+.pokelist-wrapper {
+  columns: 3 auto;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+
+}
+
+.pagination {
+  margin: 0 auto;
+  display: flex;
+  width: 300px;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  justify-content: space-evenly;
+}
+
+.header-img{
+  max-width: 105px;
+  padding-bottom: 10px;
+}
+
+.header-button{
+  float: right;
+  display: flex;
+  margin-left: 80vw;
+
+  padding: 10px 12px;
+  border: 1px solid lightgrey;
+  border-radius: 16px;
+
+  background-color: white;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #2F6DB5;
+
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-self: baseline;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-button :link{
+  text-decoration: none;
 }
