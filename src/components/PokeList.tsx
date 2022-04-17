@@ -30,15 +30,15 @@ export default function PokeList() {
     }, [])
 
     var pokeListMap = list?.results?.slice(0, 4).map((pokemon: IPokeEntries, i: number) => {
-        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)}></PokeCards>
+        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)} shadowInvisible={true}></PokeCards>
     });
 
     var pokeListMap1 = list?.results?.slice(4, 8).map((pokemon: IPokeEntries, i: number) => {
-        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)}></PokeCards>
+        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)} shadowInvisible={true}></PokeCards>
     });
 
     var pokeListMap2 = list?.results?.slice(8, 12).map((pokemon: IPokeEntries, i: number) => {
-        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)}></PokeCards>
+        return <PokeCards name={pokemon.name} id={extractId(pokemon.url)} shadowInvisible={true}></PokeCards>
     });
 
     function extractId(url: string) {
@@ -74,9 +74,17 @@ export default function PokeList() {
             </div>
 
             <div className={"pagination"}>
-                <button onClick={() => previousPage()} disabled={currentPage == 0}>{"<"}</button>
-                <div>{currentPage}</div>
-                <button onClick={() => nextPage()} disabled={currentPage * 12 == 1120}>{">"}</button>
+                <button className={"arrow"} onClick={() => previousPage()} disabled={currentPage == 0}>
+                    <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L1 8L8 1" stroke="#3564AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div className={"pagination-number"}>{currentPage}</div>
+                <button className={"arrow"} onClick={() => nextPage()} disabled={currentPage * 12 == 1120}>
+                    <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 15L8 8L1 1" stroke="#2A75BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
             </div >
         </div >
     )

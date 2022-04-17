@@ -5,7 +5,7 @@
 body {
   overflow-x: hidden;
   background-color: #E5E5E5;
-  height: 120vh;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +26,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
 }
 
 .button-endgame {
@@ -58,6 +59,8 @@ body {
   
   font-weight: bolder;
   color: #3564AE;
+
+  margin-top: 40%
 }
 
 .pokecard-body img {
@@ -220,10 +223,11 @@ li{
   margin-bottom: 24px;
   overflow: hidden;
   padding: 16px 36px 16px 16px;
+  margin-top: 15px;
 }
 
 .container-left{
-  display: contents;
+  display: inline-block;
   max-width: 60%;
 }
 
@@ -238,6 +242,7 @@ li{
   columns: 2 auto;
   -webkit-columns: 2;
   -moz-columns: 2;
+  margin-top: 15px;;
 }
 
 .stat-window{
@@ -291,9 +296,9 @@ li{
   display: flex;
   margin-left: 80vw;
 
-  padding: 10px 12px;
+  padding: 10px 24px;
   border: 1px solid lightgrey;
-  border-radius: 16px;
+  border-radius: 8px;
 
   background-color: white;
 
@@ -308,4 +313,40 @@ li{
 
 .header-button :link{
   text-decoration: none;
+}
+
+.shadow{
+  background: radial-gradient(50% 50% at 50% 50%, rgba(122, 142, 174, 0.24) 0%, rgba(255, 255, 255, 0) 100%);
+  width: 290px;
+  height: 24px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokedetail-text{
+  font-size: 16px;
+  font-weight: 600;
+  color: #C4C4C4;
+  
+  margin: 0 0 25px 56px;
+}
+
+.arrow{
+  border: 2px solid #3564AE;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.pagination-number{
+  font-size: 32px;
+  font-weight: 700;
+  color: #3564AE;
+}
+
+.arrow:disabled{
+  border: 2px solid grey;
+  stroke: grey;
+  cursor: not-allowed;
+  opacity: 0.7;
 }

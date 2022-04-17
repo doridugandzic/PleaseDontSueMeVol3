@@ -68,7 +68,7 @@ export default function Battles() {
 
     return (
         <div>
-            <span className={`${!winner ? "hide" : "pokecard-text animate__animated animate__backInDown animate__delay-1s winner-text "}`}>{winner ? (winner == "both" ? "You both win!" : `${winnerNameForDisplay} is the winner`) : ""}</span>
+            <span className={` winner-text ${!winner ? "hide" : "pokecard-text animate__animated animate__backInDown animate__delay-1s "}`}>{winner ? (winner == "both" ? "You both win!" : `${winnerNameForDisplay} is the winner`) : ""}</span>
             <div>
                 <div className={`speech-bubble-left ${!shouldShow ? "pointer-hidden" : ""}`}>
                     <span className={"pointer-text"}>Go, {pokemon1Data.name}!</span>

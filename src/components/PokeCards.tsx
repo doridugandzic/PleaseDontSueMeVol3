@@ -6,6 +6,7 @@ interface IPokeCardsProps {
     image?: string;
     name: string;
     id: number | string;
+    shadowInvisible?: boolean;
 }
 
 export default function PokeCards(props: IPokeCardsProps) {
@@ -27,6 +28,7 @@ export default function PokeCards(props: IPokeCardsProps) {
                 <img src={props.image} alt=""></img>
                 <span>{props.name}</span>
             </div>
+            {!props.shadowInvisible ? <div className={"shadow"} ></div> : ""}
         </div>
     )
 }

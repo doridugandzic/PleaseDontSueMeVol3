@@ -65,13 +65,18 @@ export default function PokeDetails() {
             <div className={'container-left'}>
                 <div className={'pokedetail-header'}>
                     <div className={'name'}>{currentPokemon.name}</div>
+
                     <div className={'sub'}>{(pokemonTypes !== undefined) ? pokemonTypes : ""}, family {currentPokemon?.species?.name}</div>
                 </div>
-
+                <div>
+                    <span className={"pokedetail-text"}>Abilities</span>
+                </div>
                 <div className={'ability-wrapper'}>
                     {pokemonAbilities}
                 </div>
-
+                <div>
+                    <span className={"pokedetail-text"}>Stats</span>
+                </div>
                 <div className={'stats-wrapper'}>
                     {pokemonStatsCol1}
                 </div>
